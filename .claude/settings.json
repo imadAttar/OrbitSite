@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(git *)",
+      "Bash(gh *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE '\\.tsx?\"'; then cd /Users/imad/Documents/workspace/OrbitSite && npx tsc --noEmit 2>&1 | head -20; fi",
+            "timeout": 15000
+          }
+        ]
+      }
+    ]
+  }
+}
