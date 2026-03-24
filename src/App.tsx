@@ -49,9 +49,9 @@ function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Orbit est un IDE de bureau AI-first qui inverse le paradigme traditionnel.
-          L'agent IA travaille, vous validez. Plus de code manuel — un cockpit
-          pour orchestrer le developpement.
+          Orbit est un IDE terminal oriente IA. Claude Code tourne au centre,
+          vous supervisez les changements, reviewez les diffs et gerez Git
+          depuis une interface dediee.
         </p>
 
         <div className="flex justify-center">
@@ -130,8 +130,8 @@ function Features() {
           Tout ce dont vous avez besoin pour <span className="glow-text">superviser l'IA</span>
         </h2>
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Orbit n'est pas un editeur de texte. C'est un cockpit de supervision
-          concu pour le developpement AI-first.
+          Orbit n'est pas un editeur de texte. C'est un IDE terminal
+          ou l'IA fait le travail et vous gardez le controle.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -221,10 +221,10 @@ function Vision() {
     <section id="vision" className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          La vision : <span className="glow-text">5 zones du cockpit</span>
+          La vision : <span className="glow-text">5 zones a venir</span>
         </h2>
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Orbit evolue vers un cockpit complet de pilotage du developpement IA,
+          Orbit evolue vers un environnement complet de pilotage du developpement IA,
           organise en 5 zones fonctionnelles.
         </p>
 
@@ -251,7 +251,7 @@ function Vision() {
 
 function Comparison() {
   const rows = [
-    ['Philosophie', "IDE + couche IA", "IA au centre + outils de supervision"],
+    ['Philosophie', "IDE + couche IA", "Terminal IA avec supervision integree"],
     ['Coeur du systeme', "Editeur de code (VS Code fork)", "Claude Code CLI natif"],
     ['Role de l\'utilisateur', "Ecrire du code", "Superviser et valider"],
     ['Acces IA', "API proprietaire", "Ecosysteme Claude Code complet (MCP, agents, tools)"],
@@ -362,7 +362,7 @@ function Download() {
         </h2>
         <p className="text-gray-400 mb-12 max-w-xl mx-auto">
           Version alpha — pour les early adopters. Vos retours sont essentiels
-          pour construire le meilleur cockpit IA.
+          pour construire le meilleur IDE terminal IA.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
