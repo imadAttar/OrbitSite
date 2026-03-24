@@ -325,7 +325,7 @@ function TechStack() {
   )
 }
 
-const RELEASE_TAG = 'v0.2.0'
+const RELEASE_TAG = '0.1.0'
 const RELEASE_BASE = `${GITHUB_URL}/releases/download/${RELEASE_TAG}`
 
 const DOWNLOADS = [
@@ -333,24 +333,24 @@ const DOWNLOADS = [
     os: 'macOS',
     icon: '🍎',
     variants: [
-      { label: 'Apple Silicon (M1+)', file: 'Orbit_0.2.0_aarch64.dmg' },
-      { label: 'Intel', file: 'Orbit_0.2.0_x64.dmg' },
+      { label: 'Apple Silicon (M1+)', file: 'Orbit_0.1.0_aarch64.dmg' },
+      { label: 'Intel', file: 'Orbit_0.1.0_x64.dmg' },
     ],
   },
   {
     os: 'Windows',
     icon: '🪟',
     variants: [
-      { label: 'x64 (.msi)', file: 'Orbit_0.2.0_x64-setup.msi' },
-      { label: 'x64 (.exe)', file: 'Orbit_0.2.0_x64-setup.exe' },
+      { label: 'x64 (.msi)', file: 'Orbit_0.1.0_x64-setup.msi' },
+      { label: 'x64 (.exe)', file: 'Orbit_0.1.0_x64-setup.exe' },
     ],
   },
   {
     os: 'Linux',
     icon: '🐧',
     variants: [
-      { label: 'AppImage', file: 'Orbit_0.2.0_amd64.AppImage' },
-      { label: '.deb', file: 'Orbit_0.2.0_amd64.deb' },
+      { label: 'AppImage', file: 'Orbit_0.1.0_amd64.AppImage' },
+      { label: '.deb', file: 'Orbit_0.1.0_amd64.deb' },
     ],
   },
 ]
