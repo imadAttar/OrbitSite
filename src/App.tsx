@@ -58,7 +58,7 @@ function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#download" className="glow-btn px-8 py-3.5 rounded-xl text-white font-semibold text-base">
-            Telecharger Orbit
+            Telecharger l'alpha
           </a>
           <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-xl font-semibold text-base border border-orbit-border text-gray-300 hover:border-orbit-blue/40 hover:text-white transition-all">
             Voir sur GitHub
@@ -325,33 +325,97 @@ function TechStack() {
   )
 }
 
+const RELEASE_TAG = 'v0.2.0-alpha.1'
+const RELEASE_BASE = `${GITHUB_URL}/releases/download/${RELEASE_TAG}`
+
+const DOWNLOADS = [
+  {
+    os: 'macOS',
+    icon: '🍎',
+    variants: [
+      { label: 'Apple Silicon (M1+)', file: 'Orbit_0.2.0-alpha.1_aarch64.dmg' },
+      { label: 'Intel', file: 'Orbit_0.2.0-alpha.1_x64.dmg' },
+    ],
+  },
+  {
+    os: 'Windows',
+    icon: '🪟',
+    variants: [
+      { label: 'x64 (.msi)', file: 'Orbit_0.2.0-alpha.1_x64-setup.msi' },
+      { label: 'x64 (.exe)', file: 'Orbit_0.2.0-alpha.1_x64-setup.exe' },
+    ],
+  },
+  {
+    os: 'Linux',
+    icon: '🐧',
+    variants: [
+      { label: 'AppImage', file: 'Orbit_0.2.0-alpha.1_amd64.AppImage' },
+      { label: '.deb', file: 'Orbit_0.2.0-alpha.1_amd64.deb' },
+    ],
+  },
+]
+
 function Download() {
   return (
     <section id="download" className="py-24 px-6">
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-yellow-400/10 text-yellow-400 text-xs font-semibold tracking-wider uppercase mb-6">
+          Alpha — Testeurs recherches
+        </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Pret a <span className="glow-text">piloter l'IA</span> ?
+          Testez <span className="glow-text">Orbit {RELEASE_TAG}</span>
         </h2>
-        <p className="text-gray-400 mb-10">
-          Orbit est gratuit et open source. Disponible sur macOS, Windows et Linux.
+        <p className="text-gray-400 mb-12 max-w-xl mx-auto">
+          Version alpha — pour les early adopters. Vos retours sont essentiels
+          pour construire le meilleur cockpit IA.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href={`${GITHUB_URL}/releases/latest`} target="_blank" rel="noopener noreferrer" className="glow-btn px-8 py-3.5 rounded-xl text-white font-semibold text-base">
-            Telecharger la derniere version
-          </a>
-          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-xl font-semibold text-base border border-orbit-border text-gray-300 hover:border-orbit-blue/40 hover:text-white transition-all">
-            Code source
-          </a>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+          {DOWNLOADS.map((d) => (
+            <div key={d.os} className="glow-border rounded-2xl p-6 bg-orbit-card/50 text-left">
+              <div className="text-2xl mb-2">{d.icon}</div>
+              <h3 className="text-white font-semibold text-lg mb-4">{d.os}</h3>
+              <div className="space-y-2">
+                {d.variants.map((v) => (
+                  <a
+                    key={v.file}
+                    href={`${RELEASE_BASE}/${v.file}`}
+                    className="flex items-center gap-2 text-sm text-orbit-blue hover:text-orbit-cyan transition-colors"
+                  >
+                    <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+                    </svg>
+                    {v.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="glow-border rounded-xl p-6 bg-orbit-card/30 text-left">
+        <a
+          href={`${GITHUB_URL}/releases/tag/${RELEASE_TAG}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-gray-500 hover:text-white transition-colors"
+        >
+          Voir la release sur GitHub →
+        </a>
+
+        <div className="glow-border rounded-xl p-6 bg-orbit-card/30 text-left mt-8">
           <div className="text-xs text-gray-500 font-mono mb-2">Pre-requis</div>
           <ul className="text-sm text-gray-400 space-y-1">
             <li>Claude Code CLI installe (<code className="text-orbit-blue text-xs bg-orbit-blue/10 px-1.5 py-0.5 rounded">npm i -g @anthropic-ai/claude-code</code>)</li>
             <li>Cle API Anthropic configuree</li>
             <li>macOS (ARM64/x64), Windows (x64) ou Linux (x64)</li>
           </ul>
+        </div>
+
+        <div className="glow-border rounded-xl p-6 bg-orbit-card/30 text-left mt-4">
+          <div className="text-xs text-gray-500 font-mono mb-2">Feedback</div>
+          <p className="text-sm text-gray-400">
+            Bug, suggestion, question ? Ouvrez une <a href={`${GITHUB_URL}/issues`} target="_blank" rel="noopener noreferrer" className="text-orbit-blue hover:text-orbit-cyan transition-colors">issue sur GitHub</a> ou contactez-nous directement.
+          </p>
         </div>
       </div>
     </section>
