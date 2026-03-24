@@ -89,7 +89,7 @@ function Features() {
     {
       icon: '🎛',
       title: 'Supervision en temps reel',
-      desc: 'Visualisez les fichiers modifies, les diffs et les actions Git de chaque agent en direct.',
+      desc: 'Visualisez les fichiers modifies, reviewez les diffs avec accept/reject, et gerez Git depuis un panneau dedie.',
     },
     {
       icon: '⚡',
@@ -108,8 +108,8 @@ function Features() {
     },
     {
       icon: '⌨️',
-      title: 'Palette de commandes',
-      desc: 'Cmd+K pour acceder a toutes les actions. Navigation rapide et intuitive.',
+      title: 'Raccourcis clavier',
+      desc: 'Cmd+P pour les bookmarks et skills, Cmd+F pour la recherche, Cmd+\\ pour le split.',
     },
     {
       icon: '💰',
@@ -118,8 +118,8 @@ function Features() {
     },
     {
       icon: '📐',
-      title: 'Split pane',
-      desc: 'Visualisez plusieurs sessions cote a cote avec des panneaux redimensionnables.',
+      title: 'Split pane vertical',
+      desc: 'Affichez deux sessions cote a cote avec un panneau redimensionnable (Cmd+\\).',
     },
     {
       icon: '🔔',
@@ -193,19 +193,19 @@ function Vision() {
     {
       num: '01',
       name: 'Intent',
-      desc: 'Exprimez vos intentions en langage naturel, schemas ou user stories. Plus besoin de coder manuellement.',
-      status: 'En cours',
+      desc: 'Interagissez avec Claude Code via un terminal integre. Envoyez des instructions, collez des images, naviguez l\'historique.',
+      status: 'Actif',
     },
     {
       num: '02',
       name: 'Supervision',
-      desc: 'Dashboard temps reel des actions IA. Diffs semantiques, approbation par action, alertes de deviation.',
+      desc: 'Fichiers modifies en temps reel, visualisation des diffs avec accept/reject, panneau Git pour commit et push.',
       status: 'Actif',
     },
     {
       num: '03',
       name: 'Verification',
-      desc: 'Tests auto-generes en continu. Couverture par intention. Monitoring securite et performance.',
+      desc: 'Tests auto-generes, couverture par intention, monitoring securite et performance.',
       status: 'Planifie',
     },
     {
@@ -217,7 +217,7 @@ function Vision() {
     {
       num: '05',
       name: 'Historique',
-      desc: 'Log de toutes les decisions humaines. Lien intention-commit. Boucle d\'apprentissage pour l\'IA.',
+      desc: 'Log des decisions humaines, lien intention-commit, boucle d\'apprentissage pour l\'IA.',
       status: 'Planifie',
     },
   ]
