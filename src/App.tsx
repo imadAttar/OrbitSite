@@ -24,10 +24,8 @@ function Nav() {
           <a href="#comparison" className="hover:text-white transition-colors">Orbit vs Cursor</a>
           <a href="#download" className="hover:text-white transition-colors">Download</a>
         </div>
-        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
+        <div />
+
       </div>
     </nav>
   )
@@ -56,12 +54,9 @@ function Hero() {
           pour orchestrer le developpement.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <a href="#download" className="glow-btn px-8 py-3.5 rounded-xl text-white font-semibold text-base">
             Telecharger l'alpha
-          </a>
-          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-xl font-semibold text-base border border-orbit-border text-gray-300 hover:border-orbit-blue/40 hover:text-white transition-all">
-            Voir sur GitHub
           </a>
         </div>
 
@@ -263,7 +258,7 @@ function Comparison() {
     ['Multi-agents', "Non", "Oui, sessions paralleles"],
     ['Code manuel', "Oui, c\'est le mode principal", "Non, l\'IA genere tout"],
     ['Suivi des couts', "Non", "Oui, par session en USD"],
-    ['Open source', "Non", "Oui, entierement"],
+    ['Open source', "Non", "Oui"],
   ]
 
   return (
@@ -393,15 +388,6 @@ function Download() {
           ))}
         </div>
 
-        <a
-          href={`${GITHUB_URL}/releases/tag/${RELEASE_TAG}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-gray-500 hover:text-white transition-colors"
-        >
-          Voir la release sur GitHub →
-        </a>
-
         <div className="glow-border rounded-xl p-6 bg-orbit-card/30 text-left mt-8">
           <div className="text-xs text-gray-500 font-mono mb-2">Pre-requis</div>
           <ul className="text-sm text-gray-400 space-y-1">
@@ -414,7 +400,7 @@ function Download() {
         <div className="glow-border rounded-xl p-6 bg-orbit-card/30 text-left mt-4">
           <div className="text-xs text-gray-500 font-mono mb-2">Feedback</div>
           <p className="text-sm text-gray-400">
-            Bug, suggestion, question ? Ouvrez une <a href={`${GITHUB_URL}/issues`} target="_blank" rel="noopener noreferrer" className="text-orbit-blue hover:text-orbit-cyan transition-colors">issue sur GitHub</a> ou contactez-nous directement.
+            Bug, suggestion, question ? Contactez-nous directement.
           </p>
         </div>
       </div>
@@ -431,9 +417,6 @@ function Footer() {
           <span>Orbit IDE</span>
         </div>
         <div>Open source sous licence MIT</div>
-        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-          GitHub
-        </a>
       </div>
     </footer>
   )
