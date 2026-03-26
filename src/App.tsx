@@ -63,15 +63,15 @@ function Hero() {
         <div className="mt-16 flex justify-center gap-8 text-sm text-gray-500">
           <span className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-400" />
-            macOS
+            macOS (Apple Silicon)
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-400" />
-            Windows
+            <span className="w-2 h-2 rounded-full bg-gray-600" />
+            Windows (bientot)
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-400" />
-            Linux
+            <span className="w-2 h-2 rounded-full bg-gray-600" />
+            Linux (bientot)
           </span>
         </div>
       </div>
@@ -320,35 +320,9 @@ function TechStack() {
   )
 }
 
-const RELEASE_TAG = '0.1.0'
+const RELEASE_TAG = '0.1.1'
 const RELEASE_BASE = `${GITHUB_URL}/releases/download/${RELEASE_TAG}`
-
-const DOWNLOADS = [
-  {
-    os: 'macOS',
-    icon: '🍎',
-    variants: [
-      { label: 'Apple Silicon (M1+)', file: 'Orbit_0.1.0_aarch64.dmg' },
-      { label: 'Intel', file: 'Orbit_0.1.0_x64.dmg' },
-    ],
-  },
-  {
-    os: 'Windows',
-    icon: '🪟',
-    variants: [
-      { label: 'x64 (.msi)', file: 'Orbit_0.1.0_x64-setup.msi' },
-      { label: 'x64 (.exe)', file: 'Orbit_0.1.0_x64-setup.exe' },
-    ],
-  },
-  {
-    os: 'Linux',
-    icon: '🐧',
-    variants: [
-      { label: 'AppImage', file: 'Orbit_0.1.0_amd64.AppImage' },
-      { label: '.deb', file: 'Orbit_0.1.0_amd64.deb' },
-    ],
-  },
-]
+const DMG_FILE = `Orbit_${RELEASE_TAG}_aarch64.dmg`
 
 function Download() {
   return (
@@ -365,35 +339,33 @@ function Download() {
           pour construire le meilleur IDE terminal IA.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
-          {DOWNLOADS.map((d) => (
-            <div key={d.os} className="glow-border rounded-2xl p-6 bg-orbit-card/50 text-left">
-              <div className="text-2xl mb-2">{d.icon}</div>
-              <h3 className="text-white font-semibold text-lg mb-4">{d.os}</h3>
-              <div className="space-y-2">
-                {d.variants.map((v) => (
-                  <a
-                    key={v.file}
-                    href={`${RELEASE_BASE}/${v.file}`}
-                    className="flex items-center gap-2 text-sm text-orbit-blue hover:text-orbit-cyan transition-colors"
-                  >
-                    <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
-                    </svg>
-                    {v.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="max-w-sm mx-auto mb-8">
+          <div className="glow-border rounded-2xl p-8 bg-orbit-card/50 text-center">
+            <div className="text-4xl mb-3">🍎</div>
+            <h3 className="text-white font-semibold text-lg mb-1">macOS</h3>
+            <p className="text-sm text-gray-500 mb-6">Apple Silicon (M1+)</p>
+            <a
+              href={`${RELEASE_BASE}/${DMG_FILE}`}
+              className="glow-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+              </svg>
+              Telecharger le .dmg
+            </a>
+          </div>
         </div>
+
+        <p className="text-sm text-gray-600 mb-12">
+          Windows et Linux arrivent prochainement.
+        </p>
 
         <div className="glow-border rounded-xl p-6 bg-orbit-card/30 text-left mt-8">
           <div className="text-xs text-gray-500 font-mono mb-2">Pre-requis</div>
           <ul className="text-sm text-gray-400 space-y-1">
             <li>Claude Code CLI installe (<code className="text-orbit-blue text-xs bg-orbit-blue/10 px-1.5 py-0.5 rounded">npm i -g @anthropic-ai/claude-code</code>)</li>
             <li>Cle API Anthropic configuree</li>
-            <li>macOS (ARM64/x64), Windows (x64) ou Linux (x64)</li>
+            <li>macOS Apple Silicon (M1, M2, M3, M4)</li>
           </ul>
         </div>
 
